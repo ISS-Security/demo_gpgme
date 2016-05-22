@@ -1,6 +1,6 @@
 require 'gpgme'
 
-key = "-----BEGIN PGP PUBLIC KEY BLOCK-----..-----END PGP PUBLIC KEY BLOCK-----"
+key = File.read('CE510594.asc')
 GPGME::Key.import key
 
 crypto = GPGME::Crypto.new :always_trust => true, armor: true
